@@ -1,6 +1,7 @@
 import streamlit as st
 from datetime import datetime, time, timedelta
 import random
+import secrets
 
 # ————— Constants —————
 QUOTES = [
@@ -77,7 +78,7 @@ def progress_percent(current: datetime) -> float:
     return (elapsed_secs / total_secs) * 100
 
 def random_quote() -> str:
-    return random.choice(QUOTES)
+    return secrets.choice(QUOTES)
 
 # ————— Gather data —————
 current       = now()
