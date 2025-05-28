@@ -1,5 +1,5 @@
 import streamlit as st
-from datetime import datetime, time
+from datetime import datetime, time, timedelta
 import random
 
 # ————— Constants —————
@@ -33,9 +33,11 @@ WORK_END   = time(18, 0)
 st.set_page_config(page_title="Workday Progress", layout="centered")
 st.markdown('<meta http-equiv="refresh" content="60">', unsafe_allow_html=True)
 
-# ————— Helpers —————
+OFFSET_HOURS = -4  # change to -5 if you need a 5-hour shift
+
 def now() -> datetime:
-    return datetime.now()
+    # take UTC and shift by OFFSET_HOURS to match your local
+    return datetime.utcnow() + timedelta(hours=OFFSET_HOURS)
 
 def progress_percent(current: datetime) -> float:
     today     = current.date()
