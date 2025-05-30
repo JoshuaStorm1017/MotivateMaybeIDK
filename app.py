@@ -52,7 +52,7 @@ QUOTES = [
     "Be the change you wish to see in the world—or just tweet angrily from your couch.",
 ]
 
-WORK_START = time(8, 30)
+WORK_START = time(9, 0)
 WORK_END   = time(18, 0)
 
 # ————— Page config & auto-refresh —————
